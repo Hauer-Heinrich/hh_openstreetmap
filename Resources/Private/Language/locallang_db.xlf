@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2018-08-28T11:22:32+02:00" product-name="hh_openstreetmap">
+    <header/>
+    <body>
+      <trans-unit id="tx_hh_openstreetmap_marker" xml:space="preserve">
+        <source>tx_hh_openstreetmap_marker</source>
+      </trans-unit>
+      <trans-unit id="tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_text" xml:space="preserve">
+        <source>Marker Text</source>
+      </trans-unit>
+      <trans-unit id="tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_lat" xml:space="preserve">
+        <source>Latitude (http://www.mapcoordinates.net/)</source>
+      </trans-unit>
+      <trans-unit id="tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_long" xml:space="preserve">
+        <source>Longitude (http://www.mapcoordinates.net/)</source>
+      </trans-unit>
+      <trans-unit id="tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_icon" xml:space="preserve">
+        <source>Marker Icon (fileadmin/hh_openstreetmap/icons/marker/)</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_fit" xml:space="preserve">
+        <source>Fit Map over markers</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_options_scrollWheelZoom" xml:space="preserve">
+        <source>Enable mouse wheel zoom</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_marker_openonstart" xml:space="preserve">
+        <source>Show marker on map load</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_lat" xml:space="preserve">
+        <source>Latitude Map center position (http://www.mapcoordinates.net/)</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_long" xml:space="preserve">
+        <source>Longitude Map center position (http://www.mapcoordinates.net/)</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_marker" xml:space="preserve">
+        <source>Markers</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom" xml:space="preserve">
+        <source>Zoom</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_fit.I.0" xml:space="preserve">
+        <source>fit map (overrides Map center position)</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_options_scrollWheelZoom.I.0" xml:space="preserve">
+        <source>Enable</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_marker_openonstart.I.0" xml:space="preserve">
+        <source>Enable</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.0" xml:space="preserve">
+        <source>1</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.1" xml:space="preserve">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.2" xml:space="preserve">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.3" xml:space="preserve">
+        <source>4</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.4" xml:space="preserve">
+        <source>5</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.5" xml:space="preserve">
+        <source>6</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.6" xml:space="preserve">
+        <source>7</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.7" xml:space="preserve">
+        <source>8</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.8" xml:space="preserve">
+        <source>9</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.9" xml:space="preserve">
+        <source>10</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.10" xml:space="preserve">
+        <source>11</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.11" xml:space="preserve">
+        <source>12</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.12" xml:space="preserve">
+        <source>13</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.13" xml:space="preserve">
+        <source>14</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.14" xml:space="preserve">
+        <source>15</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.15" xml:space="preserve">
+        <source>16</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.16" xml:space="preserve">
+        <source>17</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.17" xml:space="preserve">
+        <source>18</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.18" xml:space="preserve">
+        <source>19</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_zoom.I.19" xml:space="preserve">
+        <source>20</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.div._hh_openstreetmap_" xml:space="preserve">
+        <source>hh_openstreetmap</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.hh_openstreetmap_openstreetmap" xml:space="preserve">
+        <source>OpenStreetMap</source>
+      </trans-unit>
+      <trans-unit id="tt_content.l10n_source" xml:space="preserve">
+        <source>l10n_source</source>
+      </trans-unit>
+      <trans-unit id="tt_content.l18n_diffsource" xml:space="preserve">
+        <source>l18n_diffsource</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_impexp_origuid" xml:space="preserve">
+        <source>tx_impexp_origuid</source>
+      </trans-unit>
+      <trans-unit id="tt_content.crdate" xml:space="preserve">
+        <source>crdate</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tstamp" xml:space="preserve">
+        <source>tstamp</source>
+      </trans-unit>
+      <trans-unit id="tt_content.uploads_download" xml:space="preserve">
+        <source>download, don't show</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.I.33" xml:space="preserve">
+        <source>OpenStreetMap</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.0" xml:space="preserve">
+        <source>1</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.1" xml:space="preserve">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.2" xml:space="preserve">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.3" xml:space="preserve">
+        <source>4</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.4" xml:space="preserve">
+        <source>5</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.5" xml:space="preserve">
+        <source>6</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.6" xml:space="preserve">
+        <source>7</source>
+      </trans-unit>
+      <trans-unit id="tt_content.imagecols.I.7" xml:space="preserve">
+        <source>8</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.1" xml:space="preserve">
+        <source>1</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.2" xml:space="preserve">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.3" xml:space="preserve">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.4" xml:space="preserve">
+        <source>4</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.5" xml:space="preserve">
+        <source>5</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.6" xml:space="preserve">
+        <source>6</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.7" xml:space="preserve">
+        <source>7</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.8" xml:space="preserve">
+        <source>8</source>
+      </trans-unit>
+      <trans-unit id="tt_content.cols.I.9" xml:space="preserve">
+        <source>9</source>
+      </trans-unit>
+      <trans-unit id="tt_content.list_type.I.3" xml:space="preserve">
+        <source>Powermail</source>
+      </trans-unit>
+      <trans-unit id="tt_content.list_type.I.4" xml:space="preserve">
+        <source>Powermail_Frontend</source>
+      </trans-unit>
+      <trans-unit id="tt_content.list_type.I.5" xml:space="preserve">
+        <source>Cyz_Address - Address</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

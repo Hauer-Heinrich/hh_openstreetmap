@@ -1,0 +1,49 @@
+tt_content.hh_openstreetmap_openstreetmap = FLUIDTEMPLATE
+tt_content.hh_openstreetmap_openstreetmap {
+    layoutRootPaths {
+        0 = EXT:hh_openstreetmap/Resources/Private/Layouts/
+        10 = {$plugin.tx_hh_openstreetmap.view.layoutRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:hh_openstreetmap/Resources/Private/Partials/
+        10 = {$plugin.tx_hh_openstreetmap.view.partialRootPath}
+    }
+    templateRootPaths {
+        0 = EXT:hh_openstreetmap/Resources/Private/Templates/
+        10 = {$plugin.tx_hh_openstreetmap.view.templateRootPath}
+    }
+
+    templateName = Openstreetmap
+
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            if.isTrue.field = tx_hh_openstreetmap_marker
+            table = tx_hh_openstreetmap_marker
+            pidInList.field = pid
+            where = parentid=###uid### AND deleted=0 AND hidden=0
+            orderBy = sorting
+            markers {
+                uid.field = uid
+            }
+            as = data_tx_hh_openstreetmap_marker
+        }
+    }
+}
+
+### TODO: move resources to FLUID Assets if TYPO3 >= 10
+page {
+    includeCSS {
+        openstreetmap = {$openstreetmap.urls.openstreetmapResources}Public/Css/openstreetmap.min.css
+    }
+
+    includeJSFooterlibs {
+        leaflet = {$openstreetmap.urls.openstreetmapResources}Public/JavaScript/leaflet.min.js
+        leaflet.defer = 1
+    }
+
+    includeJSFooter {
+        leaflet_logic = {$openstreetmap.urls.openstreetmapResources}Public/JavaScript/leaflet.logic.min.js
+        leaflet_logic.defer = 1
+    }
+}

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-08T00:01:00Z" product-name="hh_openstreetmap">
+        <header/>
+        <body>
+
+            <trans-unit id="extconfig.markerIconPath">
+                <target>CURRENTLY NOT USED! markerIconPath (1:fileadmin/deinOrdner/ ODER fileadmin/deinOrdner/</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

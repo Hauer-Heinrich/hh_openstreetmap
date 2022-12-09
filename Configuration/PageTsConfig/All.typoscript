@@ -1,0 +1,2 @@
+### Include all PageTS files
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:hh_openstreetmap/Configuration/PageTsConfig/PageTsFiles" extensions="typoscript">

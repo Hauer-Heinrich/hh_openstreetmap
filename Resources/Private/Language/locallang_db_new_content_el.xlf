@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2018-08-28T11:22:32+02:00" product-name="hh_openstreetmap">
+    <header/>
+    <body>
+      <trans-unit id="wizards.newContentElement.openstreetmap_title" xml:space="preserve">
+        <source>OpenStreetMap</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.openstreetmap_description" xml:space="preserve">
+        <source></source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

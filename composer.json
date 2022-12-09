@@ -1,0 +1,49 @@
+{
+    "name": "hauerheinrich/hh_openstreetmap",
+    "type": "typo3-cms-extension",
+    "description": "Hauer-Heinrich - Simple OpenStreetMap, can use multiple markers.",
+    "authors": [
+        {
+            "name": "Christian Hackl",
+            "email": "info@hauer-heinrich.de",
+            "homepage": "http://www.hauer-heinrich.de" ,
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Hauer-Heinrich/hh_openstreetmap/issues",
+        "source": "https://github.com/Hauer-Heinrich/hh_openstreetmap",
+        "docs": "https://github.com/Hauer-Heinrich/hh_openstreetmap/blob/master/README.md"
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/hauerheinrich"
+        }
+    ],
+    "version": "0.2.2",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS", "extension"],
+    "replace": {
+        "hauer-heinrich/hh_openstreetmap": "self.version",
+        "typo3-ter/hh_openstreetmap": "self.version"
+    },
+    "require": {
+        "typo3/cms-core": "^11.5.0",
+        "typo3/cms-fluid": "^11.5.0",
+        "typo3/cms-frontend": "^11.5.0",
+        "typo3/cms-fluid-styled-content": "^11.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HauerHeinrich\\HhOpenstreetmap\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web",
+            "extension-key": "hh_openstreetmap"
+        }
+    }
+}

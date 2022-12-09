@@ -1,0 +1,35 @@
+mod {
+    web_layout {
+        tt_content {
+            preview {
+                hh_openstreetmap_openstreetmap = EXT:hh_openstreetmap/Resources/Private/Backend/Templates/Content/Openstreetmap.html
+            }
+        }
+    }
+
+    wizards {
+        newContentElement {
+            wizardItems {
+                common {
+                    elements {
+                            openstreetmap {
+                                iconIdentifier = tx_hh_openstreetmap_openstreetmap
+                                title = LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.openstreetmap_title
+                                description = LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.openstreetmap_description
+                                tt_content_defValues {
+                                    CType = hh_openstreetmap_openstreetmap
+                                }
+                            }
+                    }
+                    show := addToList(openstreetmap)
+                }
+            }
+        }
+    }
+}
+
+tx_openstreetmap {
+    settings {
+        markerIconPath = fileadmin/hh_openstreetmap/icons/marker/
+    }
+}

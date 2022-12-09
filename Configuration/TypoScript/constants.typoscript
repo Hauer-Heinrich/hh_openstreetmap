@@ -1,0 +1,20 @@
+openstreetmap {
+    name = hh_openstreetmap
+    urls {
+        openstreetmapResources = typo3conf/ext/hh_openstreetmap/Resources/
+        openstreetmapFileadmin = fileadmin/hh_openstreetmap/
+    }
+}
+
+plugin.tx_hh_openstreetmap {
+    view {
+        # cat=hh_openstreetmap/file; type=string; label=Path to template root (FE)
+            templateRootPath =
+
+        # cat=hh_openstreetmap/file; type=string; label=Path to template partials (FE)
+            partialRootPath =
+
+        # cat=hh_openstreetmap/file; type=string; label=Path to template layouts (FE)
+            layoutRootPath =
+    }
+}

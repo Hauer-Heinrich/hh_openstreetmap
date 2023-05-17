@@ -32,7 +32,6 @@ namespace HauerHeinrich\HhOpenstreetmap\ViewHelpers;
 
 // use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use \TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 class GetT3VersionViewHelper extends AbstractViewHelper {

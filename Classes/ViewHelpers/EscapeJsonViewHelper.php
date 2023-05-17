@@ -32,7 +32,6 @@ namespace HauerHeinrich\HhOpenstreetmap\ViewHelpers;
 
 // use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 
 class EscapeJsonViewHelper extends AbstractViewHelper {
 

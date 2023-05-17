@@ -1,6 +1,8 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die('Access denied.');
+
+use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 call_user_func(function() {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hh_openstreetmap_marker');
+    ExtensionManagementUtility::allowTableOnStandardPages('tx_hh_openstreetmap_marker');
 });

@@ -1,6 +1,9 @@
 <?php
+defined('TYPO3') || die('Access denied.');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+ExtensionManagementUtility::addStaticFile(
     'hh_openstreetmap',
     'Configuration/TypoScript/',
     'hh_openstreetmap'
@@ -218,7 +221,7 @@ $tempColumns = [
     ],
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
+ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
 $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['items'][] = [
     'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.CType.div._hh_openstreetmap_',

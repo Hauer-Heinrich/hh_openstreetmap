@@ -163,7 +163,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'eval' => 'required,trim,nospace,is_in',
-                'is_in' => '0123456789.',
+                'is_in' => '-0123456789.',
             ],
             'exclude' => '1',
             'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_lat',
@@ -172,7 +172,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'eval' => 'required,trim,nospace,is_in',
-                'is_in' => '0123456789.',
+                'is_in' => '-0123456789.',
             ],
             'exclude' => '1',
             'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_long',

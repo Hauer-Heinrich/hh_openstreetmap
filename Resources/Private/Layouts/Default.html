@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:hhopen="http://typo3.org/ns/HauerHeinrich/HhOpenstreetmap/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:render partial="Assets/HeaderAsset" arguments="{_all}" />
+
+<div id="c{data.uid}" class="hh-openstreetmap openstreetmap frame {data.layout} frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+    <f:render section="Content" />
+</div>
+
+<f:render partial="Assets/FooterAsset" arguments="{_all}" />
+
+</html>

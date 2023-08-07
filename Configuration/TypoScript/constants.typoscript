@@ -17,4 +17,12 @@ plugin.tx_hh_openstreetmap {
         # cat=hh_openstreetmap/file; type=string; label=Path to template layouts (FE)
             layoutRootPath =
     }
+
+    settings {
+        # cat=hh_openstreetmap/settings/010; type=boolean; label=Include slider CSS file?
+            cssFile = 1
+
+        # cat=hh_openstreetmap/settings/020; type=boolean; label=Include slider JavaScript file?
+            jsFile = 1
+    }
 }

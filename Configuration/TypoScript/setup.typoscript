@@ -29,21 +29,9 @@ tt_content.hh_openstreetmap_openstreetmap {
             as = data_tx_hh_openstreetmap_marker
         }
     }
-}
 
-### TODO: move resources to FLUID Assets if TYPO3 >= 10
-page {
-    includeCSS {
-        openstreetmap = {$openstreetmap.urls.openstreetmapResources}Public/Css/openstreetmap.min.css
-    }
-
-    includeJSFooterlibs {
-        leaflet = {$openstreetmap.urls.openstreetmapResources}Public/JavaScript/leaflet.min.js
-        leaflet.defer = 1
-    }
-
-    includeJSFooter {
-        leaflet_logic = {$openstreetmap.urls.openstreetmapResources}Public/JavaScript/leaflet.logic.min.js
-        leaflet_logic.defer = 1
+    settings {
+        cssFile = {$plugin.tx_hh_openstreetmap.settings.cssFile}
+        jsFile = {$plugin.tx_hh_openstreetmap.settings.jsFile}
     }
 }

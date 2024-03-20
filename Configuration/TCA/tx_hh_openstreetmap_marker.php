@@ -19,7 +19,7 @@ return [
         ],
         'searchFields' => 'tx_hh_openstreetmap_marker_text,tx_hh_openstreetmap_marker_lat,tx_hh_openstreetmap_marker_long',
         'dynamicConfigFile' => '',
-        'iconfile' => 'EXT:hh_openstreetmap/ext_icon.png',
+        'iconfile' => 'EXT:hh_openstreetmap/Resources/Public/Icons/Extension.png',
         'hideTable' => true,
     ],
     'types' => [

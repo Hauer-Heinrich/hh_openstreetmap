@@ -1,21 +1,21 @@
 (function() {
     window.addEventListener("load", function() {
-        var openStreetMaps = document.getElementsByClassName("openstreetmap");
+        const openStreetMaps = document.querySelectorAll(".hh-openstreetmap .openstreetmap");
 
-        for (var index = 0; index < openStreetMaps.length; index++) {
-            var element = openStreetMaps[index],
-                mapID = element.getAttribute("id"),
-                jsonMap = element.getElementsByClassName("jsonMap")[0].text,
-                obj = JSON.parse(jsonMap),
-                fitMarkerPositions = new Array(),
-                markers = obj.markers;
+        for (let index = 0; index < openStreetMaps.length; index++) {
+            const element = openStreetMaps[index],
+                  mapID = element.getAttribute("id"),
+                  jsonMap = element.querySelector(".jsonMap").text,
+                  obj = JSON.parse(jsonMap),
+                  fitMarkerPositions = new Array(),
+                  markers = obj.markers,
+                  zoom = obj.zoom,
+                  position = [
+                      obj.lat,
+                      obj.long
+                  ];
 
-            var zoom = obj.zoom,
-                scrollWheelZoom,
-                position = [
-                    obj.lat,
-                    obj.long
-                ];
+            let scrollWheelZoom = false;
 
             if(obj.scrollWheelZoom === "0" || obj.scrollWheelZoom === false || obj.scrollWheelZoom === 'false') {
                 scrollWheelZoom = false;
@@ -23,14 +23,12 @@
                 scrollWheelZoom = true;
             }
 
-            var osmMap = L.map(mapID, {
+            const osmMap = L.map(mapID, {
                 center: position,
                 zoom: zoom,
                 zoomControl: true,
                 scrollWheelZoom: scrollWheelZoom
             });
-
-
 
             // Kartendesign von MapBox (erfordert eigentlich einen API-Key, der hier verwendete API-Key funktioniert auch, ist aber von Leaflet)
             /* L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -51,14 +49,15 @@
             // https://leafletjs.com/reference-1.3.2.html#icon-default
 
             for(var i = 0; i < markers.length; i++) {
-                var marker = markers[i];
-                var parser = new DOMParser;
-                var dom = parser.parseFromString(
-                    '<!doctype html><body>' + marker.text,
-                    'text/html'
-                );
-                var text = dom.body.textContent;
-                var icon = L.icon({
+                const marker = markers[i],
+                      parser = new DOMParser,
+                      dom = parser.parseFromString(
+                          '<!doctype html><body>' + marker.text,
+                          'text/html'
+                      ),
+                      text = dom.body.textContent;
+
+                const icon = L.icon({
                     iconUrl: marker.icon,
                     // shadowUrl: 'leaf-shadow.png',
 
@@ -68,9 +67,11 @@
                     shadowAnchor: [4, 62],  // the same for the shadow
                     popupAnchor:  [-3, -10] // point from which the popup should open relative to the iconAnchor
                 });
-                var m = L.marker([marker.lat, marker.long], {icon: icon})
+
+                const m = L.marker([marker.lat, marker.long], {icon: icon})
                     .addTo(osmMap)
-                    .bindPopup(unescape(text));
+                    .bindPopup(text);
+
                 if(marker.openOnStart == true) {
                     m.openPopup();
                 }

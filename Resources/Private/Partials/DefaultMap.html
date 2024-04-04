@@ -2,7 +2,7 @@
     xmlns:hhopen="http://typo3.org/ns/HauerHeinrich/HhOpenstreetmap/ViewHelpers"
     data-namespace-typo3-fluid="true">
 
-<div id="o{data.uid}" class="openstreetmap">
+<div id="osm-{data.uid}" class="openstreetmap">
     <f:if condition="{data.header} && {data.header_layout}">
         <header>
             <f:switch expression="{data.header_layout}">

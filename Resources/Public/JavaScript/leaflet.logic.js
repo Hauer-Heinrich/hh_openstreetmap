@@ -1,3 +1,4 @@
+var hhOsmArray = {};
 (function() {
     window.addEventListener("load", function() {
         const openStreetMaps = document.querySelectorAll(".hh-openstreetmap .openstreetmap");
@@ -83,6 +84,8 @@
             if(obj.fitmarkers === "1") {
                 osmMap.fitBounds(fitMarkerPositions);
             }
+
+            hhOsmArray[mapID] = osmMap;
         }
     });
 })();

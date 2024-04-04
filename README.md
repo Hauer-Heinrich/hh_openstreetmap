@@ -18,6 +18,8 @@ In addition: Include Page Config
 - Possibility of multiple markers
 - Custom Icons selectable at the OpenStreetMap content-element
 - Custom path where the icons for the markers are stored (configurable via PageTs: "tx_openstreetmap.settings.markerIconPath = fileadmin/hh_openstreetmap/icons/marker/")
+- Modify the map afterwards: You can use in your own javascript something like: "hhOsmArray[mapID].zoomIn(2);" (mapID = osm-1599 ; where 1599 is the content-element id).
+See: https://leafletjs.com/reference.html#map-methods-for-modifying-map-state
 
 #### TODO
 - currently doesn't auto fill/search "latitude / longitude"

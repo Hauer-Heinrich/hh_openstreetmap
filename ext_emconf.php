@@ -18,10 +18,10 @@ $EM_CONF['hh_openstreetmap'] = [
     'author_email' => 'chackl@hauer-heinrich.de',
     'author_company' => 'Werbeagentur Hauer-Heinrich.de',
     'state' => 'stable',
-    'version' => '0.3.3',
+    'version' => '0.4.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.4.99',
+            'typo3' => '12.4.0-13.4.99',
         ],
         'conflicts' => [
         ],

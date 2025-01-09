@@ -21,6 +21,9 @@ return [
         'dynamicConfigFile' => '',
         'iconfile' => 'EXT:hh_openstreetmap/Resources/Public/Icons/Extension.png',
         'hideTable' => true,
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
     ],
     'types' => [
         '1' => [

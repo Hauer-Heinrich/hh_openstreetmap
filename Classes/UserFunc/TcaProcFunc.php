@@ -14,7 +14,7 @@ class TcaProcFunc {
      */
     public function markerIcons(array &$config) {
         // Get current selected page from pageTree
-        $selectedPageId = GeneralUtility::_GET('id');
+        $selectedPageId = intval($config['row']['pid'] ?? 0);
         $rootPageId = 1;
 
         foreach (array_reverse(BackendUtility::BEgetRootLine($selectedPageId)) as $value) {

@@ -1,16 +1,18 @@
-tt_content.hh_openstreetmap_openstreetmap = FLUIDTEMPLATE
+tt_content.hh_openstreetmap_openstreetmap =< lib.contentElement
 tt_content.hh_openstreetmap_openstreetmap {
+    // layoutRootPaths < lib.contentElement.layoutRootPaths
     layoutRootPaths {
-        0 = EXT:hh_openstreetmap/Resources/Private/Layouts/
-        10 = {$plugin.tx_hh_openstreetmap.view.layoutRootPath}
+        100 = EXT:hh_openstreetmap/Resources/Private/Layouts/
+        200 = {$plugin.tx_hh_openstreetmap.view.layoutRootPath}
     }
+    // partialRootPaths < lib.contentElement.partialRootPaths
     partialRootPaths {
-        0 = EXT:hh_openstreetmap/Resources/Private/Partials/
-        10 = {$plugin.tx_hh_openstreetmap.view.partialRootPath}
+        100 = EXT:hh_openstreetmap/Resources/Private/Partials/
+        200 = {$plugin.tx_hh_openstreetmap.view.partialRootPath}
     }
     templateRootPaths {
-        0 = EXT:hh_openstreetmap/Resources/Private/Templates/
-        10 = {$plugin.tx_hh_openstreetmap.view.templateRootPath}
+        100 = EXT:hh_openstreetmap/Resources/Private/Templates/
+        200 = {$plugin.tx_hh_openstreetmap.view.templateRootPath}
     }
 
     templateName = Openstreetmap

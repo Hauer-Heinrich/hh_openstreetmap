@@ -4,8 +4,52 @@
 
 <f:layout name="Default" />
 
-<f:section name="Content">
-    <f:render partial="DefaultMap" arguments="{_all}" />
+<f:section name="Header"></f:section>
+
+<f:section name="Main">
+    <f:render partial="Assets/Css" arguments="{_all}" />
+    <f:render partial="Assets/JavaScript" arguments="{_all}" />
+
+    <div id="osm-{data.uid}" class="hh-openstreetmap" data-id="{data.uid}">
+        <f:render partial="Header/All" arguments="{_all}" />
+
+        <f:if condition="{data.bodytext}">
+            <div class="ce-bodytext">
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </f:if>
+
+        <div id="map-{data.uid}" class="osm-map" style="width: 100%;"></div>
+
+        <f:asset.css identifier="hh-openstreetmap-style" priority="true">
+            .osm-map {
+                --osm-map-height-desktop: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_desktop}</f:format.number>px;
+                --osm-map-height-tablet: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_tablet}</f:format.number>px;
+                --osm-map-height-mobile: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_mobile}</f:format.number>px;
+            }
+        </f:asset.css>
+        <f:asset.script identifier="hh-openstreetmap-config" id="osm-config-{data.uid}" class="osm-config" type="application/json">
+            {<f:comment></f:comment>
+                "zoom": "{data.tx_hh_openstreetmap_zoom}",
+                "lat": "{data.tx_hh_openstreetmap_map_lat}",
+                "long": "{data.tx_hh_openstreetmap_map_long}",
+                "fitmarkers": "{data.tx_hh_openstreetmap_map_fit}",
+                "scrollWheelZoom": "{data.tx_hh_openstreetmap_options_scrollWheelZoom}",
+                "markerIconPath": "{settings.markerIconPath}",
+                "markers": [
+                    <f:for each="{data_tx_hh_openstreetmap_marker}" as="marker" iteration="i">
+                    {
+                        "text": "<hhopen:rmLineBreaks><hhopen:escapeJson><f:format.html>{marker.data.tx_hh_openstreetmap_marker_text}</f:format.html></hhopen:escapeJson></hhopen:rmLineBreaks>",
+                        "lat": "{marker.data.tx_hh_openstreetmap_marker_lat}",
+                        "long": "{marker.data.tx_hh_openstreetmap_marker_long}",
+                        "icon": "{marker.data.tx_hh_openstreetmap_marker_icon}",
+                        "openOnStart": "{marker.data.tx_hh_openstreetmap_marker_openonstart}"
+                    }<f:if condition="{i.isLast}"><f:then></f:then><f:else>,</f:else></f:if>
+                    </f:for>
+                ]
+            }
+        </f:asset.script>
+    </div>
 </f:section>
 
 </html>

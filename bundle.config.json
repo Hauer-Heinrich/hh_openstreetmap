@@ -1,0 +1,26 @@
+[
+    {
+        "outdir": ".",
+        "entryPoints": [
+            { "in": "./Resources/Public/Css/openstreetmap.css", "out": "./Resources/Public/Css/openstreetmap.bundle" },
+            { "in": "./Resources/Public/JavaScript/leaflet.logic.js", "out": "./Resources/Public/JavaScript/leaflet.logic.bundle" }
+        ],
+        "bundle": true,
+        "write": true,
+        "minify": true,
+        "sourcemap": true,
+        "logLevel": "info",
+        "external": [
+            "./Images/*", "../Images/*",
+            "./Fonts/*", "../Fonts/*",
+            "./Icons/*", "../Icons/*",
+            "./Static/*", "../Static/*",
+            "./public/*", "../public/*",
+            "./static/*", "../static/*"
+        ],
+        "supported": {
+            "nesting": false,
+            "is-pseudo-class": false
+        }
+    }
+]

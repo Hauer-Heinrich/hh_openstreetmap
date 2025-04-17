@@ -8,11 +8,7 @@ use \TYPO3\CMS\Core\Resource\ResourceFactory;
 
 class TcaProcFunc {
 
-    /**
-     * @param array $config
-     * @return array
-     */
-    public function markerIcons(array &$config) {
+    public function markerIcons(array &$config): void {
         // Get current selected page from pageTree
         $selectedPageId = intval($config['row']['pid'] ?? 0);
         $rootPageId = 1;
@@ -25,7 +21,6 @@ class TcaProcFunc {
         }
 
         $pageTsConfig = BackendUtility::getPagesTSconfig($rootPageId)['tx_openstreetmap.'];
-
         $directoryFull = $pageTsConfig['settings.']['markerIconPath'];
 
         // make it possible to use storageIdentifier in constants like "1:user_upload/..." or "fileadmin/user_upload/..."
@@ -39,6 +34,7 @@ class TcaProcFunc {
             $defaultStorage = $resourceFactory->getDefaultStorage();
             $folder = $defaultStorage->getFolder($directory[1]);
         }
+
         $files = $defaultStorage->getFilesInFolder($folder);
 
         foreach($files as $file) {

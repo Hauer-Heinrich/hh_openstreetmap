@@ -21,7 +21,7 @@
             "url": "https://www.paypal.com/paypalme/hauerheinrich"
         }
     ],
-    "version": "0.4.1",
+    "version": "1.0.0",
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS", "extension"],
     "replace": {
@@ -29,10 +29,10 @@
         "typo3-ter/hh_openstreetmap": "self.version"
     },
     "require": {
-        "typo3/cms-core": "^12.4.0 || ^13.4.0",
-        "typo3/cms-fluid": "^12.4.0 || ^13.4.0",
-        "typo3/cms-frontend": "^12.4.0 || ^13.4.0",
-        "typo3/cms-fluid-styled-content": "^12.4.0 || ^13.4.0"
+        "typo3/cms-core": "^13.4.0",
+        "typo3/cms-fluid": "^13.4.0",
+        "typo3/cms-frontend": "^13.4.0",
+        "typo3/cms-fluid-styled-content": "^13.4.0"
     },
     "autoload": {
         "psr-4": {

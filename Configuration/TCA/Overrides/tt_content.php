@@ -13,6 +13,8 @@ $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['hh_openstreetmap_open
 $tempColumns = [
     'tx_hh_openstreetmap_map_fit' => [
         'onChange' => 'reload',
+        'exclude' => '1',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_fit',
         'config' => [
             'type' => 'check',
             'items' => [
@@ -22,11 +24,11 @@ $tempColumns = [
             ],
             'default' => 0,
         ],
-        'exclude' => '1',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_fit',
     ],
     'tx_hh_openstreetmap_options_scrollWheelZoom' => [
         'onChange' => 'reload',
+        'exclude' => '1',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_options_scrollWheelZoom',
         'config' => [
             'type' => 'check',
             'items' => [
@@ -35,26 +37,29 @@ $tempColumns = [
                 ],
             ],
         ],
-        'exclude' => '1',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_options_scrollWheelZoom',
     ],
     'tx_hh_openstreetmap_map_lat' => [
         'displayCond' => 'FIELD:tx_hh_openstreetmap_map_fit:=:0',
+        'exclude' => '1',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_lat',
+        'description' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_lat.description',
         'config' => [
             'type' => 'input',
         ],
-        'exclude' => '1',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_lat',
     ],
     'tx_hh_openstreetmap_map_long' => [
         'displayCond' => 'FIELD:tx_hh_openstreetmap_map_fit:=:0',
+        'exclude' => '1',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_long',
+        'description' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_long.description',
         'config' => [
             'type' => 'input',
         ],
-        'exclude' => '1',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_long',
     ],
     'tx_hh_openstreetmap_marker' => [
+        'exclude' => '1',
+        'l10n_mode' => 'copy',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_marker',
         'config' => [
             'type' => 'inline',
             'foreign_table' => 'tx_hh_openstreetmap_marker',
@@ -72,12 +77,11 @@ $tempColumns = [
                 'showAllLocalizationLink' => '1',
             ],
         ],
-        'exclude' => '1',
-        'l10n_mode' => 'copy',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_marker',
     ],
     'tx_hh_openstreetmap_zoom' => [
         'displayCond' => 'FIELD:tx_hh_openstreetmap_map_fit:=:0',
+        'exclude' => '1',
+        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_zoom',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
@@ -165,10 +169,9 @@ $tempColumns = [
                 ],
             ],
         ],
-        'exclude' => '1',
-        'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_zoom',
     ],
     'tx_hh_openstreetmap_height_desktop' => [
+        'exclude' => '1',
         'label' => 'Höhe der Map in px (Desktop)',
         'config' => [
             'type' => 'input',
@@ -186,6 +189,7 @@ $tempColumns = [
         ],
     ],
     'tx_hh_openstreetmap_height_tablet' => [
+        'exclude' => '1',
         'label' => 'Höhe der Map in px (tablet)',
         'config' => [
             'type' => 'input',
@@ -203,6 +207,7 @@ $tempColumns = [
         ],
     ],
     'tx_hh_openstreetmap_height_mobile' => [
+        'exclude' => '1',
         'label' => 'Höhe der Map in px (mobile)',
         'config' => [
             'type' => 'input',
@@ -245,39 +250,43 @@ $tempTypes = [
             ],
         ],
         'showitem' => '
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                header,
-                header_layout,
+                --palette--;;headers,
+                bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+
             --div--;Options,
                 tx_hh_openstreetmap_zoom,
                 tx_hh_openstreetmap_options_scrollWheelZoom,
                 tx_hh_openstreetmap_map_fit,
                 tx_hh_openstreetmap_map_lat,
                 tx_hh_openstreetmap_map_long,
+
             --div--;Markers,
                 tx_hh_openstreetmap_marker,
+
             --div--;Sizes,
                 tx_hh_openstreetmap_height_desktop,
                 tx_hh_openstreetmap_height_tablet,
                 tx_hh_openstreetmap_height_mobile,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-                --palette--;;language,
+
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:appearance,
+                --palette--;;frames,
+                --palette--;;appearanceLinks,
+
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
                 --palette--;;hidden,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-            --div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,
                 categories,
+
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                --palette--;;language,
+
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
+
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-                tx_gridelements_container,
-                tx_gridelements_columns,
-            --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements',
+        ',
     ],
 ];
 $GLOBALS['TCA']['tt_content']['types'] += $tempTypes;

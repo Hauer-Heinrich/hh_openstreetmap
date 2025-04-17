@@ -1,0 +1,2 @@
+### Include all PageTS files
+@import 'EXT:hh_openstreetmap/Configuration/TsConfig/Page/*.tsconfig'

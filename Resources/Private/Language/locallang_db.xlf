@@ -28,10 +28,16 @@
         <source>Show marker on map load</source>
       </trans-unit>
       <trans-unit id="tt_content.tx_hh_openstreetmap_map_lat" xml:space="preserve">
-        <source>Latitude Map center position (http://www.mapcoordinates.net/)</source>
+        <source>Latitude Map center position</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_lat.description" xml:space="preserve">
+        <source>Use e. g. http://www.mapcoordinates.net</source>
       </trans-unit>
       <trans-unit id="tt_content.tx_hh_openstreetmap_map_long" xml:space="preserve">
-        <source>Longitude Map center position (http://www.mapcoordinates.net/)</source>
+        <source>Longitude Map center position</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_hh_openstreetmap_map_long.description" xml:space="preserve">
+        <source>Use e. g. http://www.mapcoordinates.net</source>
       </trans-unit>
       <trans-unit id="tt_content.tx_hh_openstreetmap_marker" xml:space="preserve">
         <source>Markers</source>

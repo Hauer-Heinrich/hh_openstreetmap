@@ -35,12 +35,7 @@ use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class EscapeJsonViewHelper extends AbstractViewHelper {
 
-    /**
-     * Simple Fluid Viewhelper to add data to the html header tag
-     * @param string $tag
-     */
     public function render() {
-        // $this->arguments['flexform']
         return str_replace('"', "'", $this->renderChildren());
     }
 }

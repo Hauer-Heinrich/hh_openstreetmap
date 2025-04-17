@@ -1,28 +1,40 @@
-<strong>OpenStreetMap</strong><br>
-<f:if condition="{processedRow.tx_hh_openstreetmap_zoom}">
-    <strong><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_zoom" /></strong>
-    {processedRow.tx_hh_openstreetmap_zoom.0}<br>
-</f:if>
-<f:if condition="{processedRow.tx_hh_openstreetmap_map_fit}">
-    <strong><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_fit" /></strong>
-    {processedRow.tx_hh_openstreetmap_map_fit}<br>
-</f:if>
-<f:if condition="{processedRow.tx_hh_openstreetmap_map_lat}">
-    <strong><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_lat" /></strong>
-    {processedRow.tx_hh_openstreetmap_map_lat}<br>
-</f:if>
-<f:if condition="{processedRow.tx_hh_openstreetmap_map_long}">
-    <strong><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_long" /></strong>
-    {processedRow.tx_hh_openstreetmap_map_long}<br>
-</f:if>
-<f:if condition="{processedRow.tx_hh_openstreetmap_marker}">
-    <strong><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_marker" /></strong>
-<br><f:for each="{processedRow.tx_hh_openstreetmap_marker}" as="item">
-    <ul>
-        <li>
-            <f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_text" />
-            <f:format.html>{item.tx_hh_openstreetmap_marker_text}</f:format.html><br/>
-        </li>
-    </ul>
-</f:for>
-</f:if>
+<div id="c{uid}" class="hh-openstreetmap">
+    <f:if condition="{bodytext}">
+        <div class="ce-bodytext">
+            <f:transform.html><f:format.crop maxCharacters="100" respectHtml="1" respectWordBoundaries="1">{bodytext}</f:format.crop></f:transform.html>
+        </div>
+    </f:if>
+
+    <dl class="options" style="font-size: 70%;">
+        <dt>Markers</dt>
+        <dd>{tx_hh_openstreetmap_marker}</dd>
+
+        <dt><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_zoom" /></dt>
+        <dd>{tx_hh_openstreetmap_zoom}</dd>
+
+        <dt><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_options_scrollWheelZoom" /></dt>
+        <dd>{tx_hh_openstreetmap_options_scrollWheelZoom}</dd>
+
+        <f:if condition="{tx_hh_openstreetmap_map_fit}">
+            <f:then>
+                <dt><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_fit" /></dt>
+                <dd>{tx_hh_openstreetmap_map_fit}</dd>
+            </f:then>
+            <f:else>
+                <f:if condition="{tx_hh_openstreetmap_map_lat} && {tx_hh_openstreetmap_map_long}">
+                    <f:then>
+                        <dt><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_lat" /></dt>
+                        <dd>{tx_hh_openstreetmap_map_lat}</dd>
+
+                        <dt><f:translate key="LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_map_long" /></dt>
+                        <dd>{tx_hh_openstreetmap_map_long}</dd>
+                    </f:then>
+                    <f:else>
+                        <dt>Center map position</dt>
+                        <dd>Used from first marker.</dd>
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+    </dl>
+</div>

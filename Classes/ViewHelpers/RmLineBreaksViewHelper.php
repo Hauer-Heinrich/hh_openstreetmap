@@ -36,8 +36,7 @@ use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class RmLineBreaksViewHelper extends AbstractViewHelper {
 
     /**
-     * Simple Fluid Viewhelper to add data to the html header tag
-     * @param string $tag
+     * Replaces linebreaks
      */
     public function render() {
         return preg_replace("/\r|\n/", "", $this->renderChildren());

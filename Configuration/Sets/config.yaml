@@ -1,0 +1,5 @@
+name: hauerheinrich/hh-openstreetmap
+label: hh_openstreetmap, main set
+
+dependencies:
+  - typo3/fluid-styled-content

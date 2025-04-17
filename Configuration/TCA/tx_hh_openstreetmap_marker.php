@@ -6,6 +6,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
+        'sortby' => 'sorting',
         'dividers2tabs' => true,
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
@@ -18,7 +19,6 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'tx_hh_openstreetmap_marker_text,tx_hh_openstreetmap_marker_lat,tx_hh_openstreetmap_marker_long',
-        'dynamicConfigFile' => '',
         'iconfile' => 'EXT:hh_openstreetmap/Resources/Public/Icons/Extension.png',
         'hideTable' => true,
         'security' => [
@@ -28,14 +28,14 @@ return [
     'types' => [
         '1' => [
             'showitem' => '
-                tx_hh_openstreetmap_marker_text,
-                --palette--;Marker Position;marker_position,
-                --palette--;Marker Options;marker_options,
+                    tx_hh_openstreetmap_marker_text,
+                    --palette--;Marker Position;marker_position,
+                    --palette--;Marker Options;marker_options,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;hidden,
                     --palette--;;access,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                     --palette--;;language,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access
             ',
         ],
     ],
@@ -46,17 +46,29 @@ return [
         'marker_options' => [
             'showitem' => 'tx_hh_openstreetmap_marker_icon,tx_hh_openstreetmap_marker_openonstart',
         ],
-        'language' => [
-            'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource',
+        'hidden' => [
+            'showitem' => '
+                hidden
+            ',
         ],
         'access' => [
-            'showitem' => 'hidden',
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access',
+            'showitem' => '
+                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
+                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
+                --linebreak--,
+                fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:fe_group_formlabel,
+                --linebreak--,editlock
+            ',
+        ],
+        'language' => [
+            'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource',
         ],
     ],
     'columns' => [
         'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'language',
             ],
@@ -92,10 +104,12 @@ return [
             ],
         ],
         'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'default' => 0,
             ],
         ],
         'starttime' => [
@@ -152,57 +166,56 @@ return [
                 'type' => 'passthrough',
             ],
         ],
+
         'tx_hh_openstreetmap_marker_text' => [
+            'exclude' => '1',
+            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_text',
             'config' => [
                 'type' => 'text',
                 'eval' => 'trim',
                 'richtextConfiguration' => 'default',
                 'enableRichtext' => '1',
             ],
-            'exclude' => '1',
-            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_text',
         ],
         'tx_hh_openstreetmap_marker_lat' => [
-            'config' => [
-                'type' => 'input',
-                'eval' => 'required,trim,nospace,is_in',
-                'is_in' => '-0123456789.',
-            ],
             'exclude' => '1',
             'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_lat',
-        ],
-        'tx_hh_openstreetmap_marker_long' => [
             'config' => [
                 'type' => 'input',
-                'eval' => 'required,trim,nospace,is_in',
+                'eval' => 'trim,nospace,is_in',
+                'required' => true,
                 'is_in' => '-0123456789.',
             ],
+        ],
+        'tx_hh_openstreetmap_marker_long' => [
             'exclude' => '1',
             'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_long',
+            'config' => [
+                'type' => 'input',
+                'eval' => 'trim,nospace,is_in',
+                'required' => true,
+                'is_in' => '-0123456789.',
+            ],
         ],
         'tx_hh_openstreetmap_marker_icon' => [
+            'exclude' => '1',
+            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_icon',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                // 'fileFolder' => 'fileadmin/hh_openstreetmap/icons/marker/',
-                // 'fileFolder_extList' => 'png,jpg',
-                // 'fileFolder_recursions' => 0,
                 'fieldWizard' => [
                     'selectIcons' => [
                         'disabled' => false,
                     ],
                 ],
-                // 'items' => [
-                //     ['Label', 'value', 'icon-path/absolute/but-not-public-path!'],
-                // ],
                 'itemsProcFunc' => 'HauerHeinrich\\HhOpenstreetmap\\UserFunc\\TcaProcFunc->markerIcons',
                 'minitems' => 1,
                 'maxitems' => 1
             ],
-            'exclude' => '1',
-            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tx_hh_openstreetmap_marker.tx_hh_openstreetmap_marker_icon',
         ],
         'tx_hh_openstreetmap_marker_openonstart' => [
+            'exclude' => '1',
+            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_marker_openonstart',
             'config' => [
                 'type' => 'check',
                 'items' => [
@@ -212,8 +225,6 @@ return [
                 ],
                 'default' => 0,
             ],
-            'exclude' => '1',
-            'label' => 'LLL:EXT:hh_openstreetmap/Resources/Private/Language/locallang_db.xlf:tt_content.tx_hh_openstreetmap_marker_openonstart',
         ],
     ],
 ];

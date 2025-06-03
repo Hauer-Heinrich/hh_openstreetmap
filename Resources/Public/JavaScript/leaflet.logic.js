@@ -62,17 +62,22 @@ window.hhOsmArray = {};
                                 '<!doctype html><body>' + marker.text,
                                 'text/html'
                             ),
-                            text = dom.body.textContent;
+                            text = dom.body.textContent,
+                            iconHeight = marker.icon.iconSize ? marker.icon.iconSize.height : 50,
+                            iconWidth = marker.icon.iconSize ? marker.icon.iconSize.width : 50,
+                            iconAnchorTop = marker.icon.hasOwnProperty("iconAnchor") ? marker.icon.iconAnchor.top : 25,
+                            iconAnchorLeft = marker.icon.hasOwnProperty("iconAnchor") ? marker.icon.iconAnchor.left : 25,
+                            popupAnchorTop = marker.icon.hasOwnProperty("popupAnchor") ? marker.icon.popupAnchor.top : -25,
+                            popupAnchorLeft = marker.icon.hasOwnProperty("popupAnchor") ? marker.icon.popupAnchor.left : 0;
 
                     const icon = L.icon({
-                        iconUrl: marker.icon,
+                        iconUrl: marker.icon.iconUrl,
                         // shadowUrl: 'leaf-shadow.png',
-
-                        iconSize:     [40, 40], // size of the icon
+                        iconSize:     [iconWidth, iconHeight], // size of the icon
                         shadowSize:   [50, 50], // size of the shadow
-                        iconAnchor:   [22, 22], // point of the icon which will correspond to marker's location
+                        iconAnchor:   [iconAnchorLeft, iconAnchorTop], // point of the icon which will correspond to marker's location
                         shadowAnchor: [4, 62],  // the same for the shadow
-                        popupAnchor:  [-3, -10] // point from which the popup should open relative to the iconAnchor
+                        popupAnchor:  [popupAnchorLeft, popupAnchorTop] // point from which the popup should open relative to the iconAnchor
                     });
 
                     const m = L.marker([marker.lat, marker.long], {icon: icon})

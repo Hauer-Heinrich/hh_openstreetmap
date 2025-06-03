@@ -21,14 +21,14 @@
 
         <div id="map-{data.uid}" class="osm-map" style="width: 100%;"></div>
 
-        <f:asset.css identifier="hh-openstreetmap-style" priority="true">
-            .osm-map {
+        <f:asset.css identifier="hh-openstreetmap-style-{data.uid}" priority="true">
+            #map-{data.uid} {
                 --osm-map-height-desktop: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_desktop}</f:format.number>px;
                 --osm-map-height-tablet: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_tablet}</f:format.number>px;
                 --osm-map-height-mobile: <f:format.number decimals="0">{data.tx_hh_openstreetmap_height_mobile}</f:format.number>px;
             }
         </f:asset.css>
-        <f:asset.script identifier="hh-openstreetmap-config" id="osm-config-{data.uid}" class="osm-config" type="application/json">
+        <f:asset.script identifier="hh-openstreetmap-config-{data.uid}" id="osm-config-{data.uid}" class="osm-config" type="application/json">
             {<f:comment></f:comment>
                 "zoom": "{data.tx_hh_openstreetmap_zoom}",
                 "lat": "{data.tx_hh_openstreetmap_map_lat}",
@@ -42,7 +42,12 @@
                         "text": "<hhopen:rmLineBreaks><hhopen:escapeJson><f:format.html>{marker.data.tx_hh_openstreetmap_marker_text}</f:format.html></hhopen:escapeJson></hhopen:rmLineBreaks>",
                         "lat": "{marker.data.tx_hh_openstreetmap_marker_lat}",
                         "long": "{marker.data.tx_hh_openstreetmap_marker_long}",
-                        "icon": "{marker.data.tx_hh_openstreetmap_marker_icon}",
+                        "icon": {
+                            "iconUrl": <f:comment></f:comment>"{marker.data.tx_hh_openstreetmap_marker_icon}",
+                            "iconSize": { "width": 50, "height": 50 },
+                            "iconAnchor": { "left": 25, "top": 50 },
+                            "popupAnchor": { "left": 0, "top": -25 }
+                        },
                         "openOnStart": "{marker.data.tx_hh_openstreetmap_marker_openonstart}"
                     }<f:if condition="{i.isLast}"><f:then></f:then><f:else>,</f:else></f:if>
                     </f:for>

@@ -22,7 +22,7 @@ $EM_CONF['hh_openstreetmap'] = [
     'constraints' => [
         'depends' => [
             'typo3' => '13.4.0-13.4.99',
-            'fluid_styled_content' => '13.4.0-13.4.99',
+            'fluid' => '13.4.0-13.4.99',
         ],
         'conflicts' => [
         ],

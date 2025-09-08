@@ -22,12 +22,19 @@ namespace HauerHeinrich\HhOpenstreetmap\ViewHelpers;
  * GNU General Public License for more details.
  *
  * This copyright notice MUST APPEAR in all copies of the script!
- * Example
+ * Example:
  * <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
  *   xmlns:hh="http://typo3.org/ns/VENDOR/NAMESPACE/ViewHelpers"
  *   data-namespace-typo3-fluid="true">
  *
- *  <hh:escapeJson>
+ *   <hh:escapeJson>
+ */
+
+/**
+ * Prepares HTML content for use in JSON-compatible strings.
+ *
+ * $htmlContent: The HTML content from an RTE field.
+ * returns: A safe, sanitized string for JSON contexts.
  */
 
 // use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;

@@ -57,12 +57,7 @@ window.hhOsmArray = {};
 
                 for(var i = 0; i < markers.length; i++) {
                     const marker = markers[i],
-                            parser = new DOMParser,
-                            dom = parser.parseFromString(
-                                '<!doctype html><body>' + marker.text,
-                                'text/html'
-                            ),
-                            text = dom.body.textContent,
+                            text = marker.text,
                             iconHeight = marker.icon.iconSize ? marker.icon.iconSize.height : 50,
                             iconWidth = marker.icon.iconSize ? marker.icon.iconSize.width : 50,
                             iconAnchorTop = marker.icon.hasOwnProperty("iconAnchor") ? marker.icon.iconAnchor.top : 25,
@@ -82,7 +77,9 @@ window.hhOsmArray = {};
 
                     const m = L.marker([marker.lat, marker.long], {icon: icon})
                         .addTo(osmMap)
-                        .bindPopup(text);
+                    if(text) {
+                        m.bindPopup(text);
+                    }
 
                     if(marker.openOnStart == true) {
                         m.openPopup();

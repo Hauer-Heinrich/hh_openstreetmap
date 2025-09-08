@@ -36,6 +36,19 @@ use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 class EscapeJsonViewHelper extends AbstractViewHelper {
 
     public function render() {
-        return str_replace('"', "'", $this->renderChildren());
+        $htmlContent = $this->renderChildren();
+        // Step 1: Remove whitespace (line breaks, tabs, etc.)
+        $cleaned = preg_replace('/[\r\n\t]+/', '', $htmlContent);
+        // Step 2: Replace multiple spaces with a single space (outside of <pre> blocks, etc.)
+        $cleaned = preg_replace('/\s{2,}/', ' ', $cleaned);
+        // Step 3: Escape JSON-compatible
+        $jsonSafe = json_encode($cleaned, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        // Step 4: Remove double quotation marks (json_encode returns a “...” string)
+        // We remove the first and last quotation marks.
+        if ($jsonSafe !== false && strlen($jsonSafe) >= 2) {
+            $jsonSafe = substr($jsonSafe, 1, -1); // removes outer "
+        }
+
+        return $jsonSafe;
     }
 }

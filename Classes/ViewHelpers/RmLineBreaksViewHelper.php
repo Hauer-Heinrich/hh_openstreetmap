@@ -38,7 +38,7 @@ class RmLineBreaksViewHelper extends AbstractViewHelper {
     /**
      * Replaces linebreaks
      */
-    public function render() {
+    public function render(): string {
         return preg_replace("/\r|\n/", "", $this->renderChildren());
     }
 }

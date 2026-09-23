@@ -29,7 +29,3 @@ See: https://leafletjs.com/reference.html#map-methods-for-modifying-map-state
 ![example picture from backend - options](.github/images/options.jpg?raw=true "Options")
 
 ![example picture from backend - markers](.github/images/markers.jpg?raw=true "Markers")
-
-##### License
-----
-GNU GENERAL PUBLIC LICENSE Version 3

@@ -1,5 +1,5 @@
 name: hauerheinrich/hh-openstreetmap
-label: hh_openstreetmap, main set
+label: 'Hauer-Heinrich OpenStreetMap, main set'
 
 dependencies:
   - typo3/fluid-styled-content

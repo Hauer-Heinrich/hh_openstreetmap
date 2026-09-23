@@ -42,7 +42,7 @@ use \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class EscapeJsonViewHelper extends AbstractViewHelper {
 
-    public function render() {
+    public function render(): string {
         $htmlContent = $this->renderChildren();
         // Step 1: Remove whitespace (line breaks, tabs, etc.)
         $cleaned = preg_replace('/[\r\n\t]+/', '', $htmlContent);

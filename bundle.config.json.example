@@ -11,6 +11,6 @@
     "logLevel": "info",
     "external": [ "./public/*", "../public/*", "./static/*", "../static/*" ],
     "supported": {
-    "nesting": false
+        "nesting": false
     }
 }
